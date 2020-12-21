@@ -1,4 +1,4 @@
-import { makeAutoObservable } from 'mobx'
+import { action, makeAutoObservable } from 'mobx'
 import { Film, FilmsApi, MovieType } from '../../api/FilmsApi'
 
 class TopFilms {
@@ -21,14 +21,15 @@ class TopFilms {
   }
 
   getTop() {
+    this.films = []
     if (this.type === 'movie') {
-      FilmsApi.getTopMovies(this.year).then((res: Array<Film>) => {
+      FilmsApi.getTopMovies(this.year).then(action((res: Array<Film>) => {
         this.films = res
-      })
+      }))
     } else {
-      FilmsApi.getTopTV(this.year).then((res: Array<Film>) => {
+      FilmsApi.getTopTV(this.year).then(action((res: Array<Film>) => {
         this.films = res
-      })
+      }))
     }
   }
 }

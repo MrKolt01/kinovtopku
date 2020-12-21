@@ -1,4 +1,4 @@
-import { makeAutoObservable } from 'mobx'
+import { action, makeAutoObservable } from 'mobx'
 import { Actor, Film, FilmsApi, MovieType } from '../../api/FilmsApi'
 
 class FilmInfo {
@@ -37,15 +37,15 @@ class FilmInfo {
   getInfo(type: MovieType, id: number) {
     this.clearInfo()
     if (type === 'movie' || type === 'tv') {
-      FilmsApi.getMovie(type, id).then((res: Film) => {
+      FilmsApi.getMovie(type, id).then(action((res: Film) => {
         this.film = res
-      })
-      FilmsApi.getImages(type, id).then((res: Array<string>) => {
+      }))
+      FilmsApi.getImages(type, id).then(action((res: Array<string>) => {
         this.images = res
-      })
-      FilmsApi.getCrew(type, id).then((res: Array<Actor>) => {
+      }))
+      FilmsApi.getCrew(type, id).then(action((res: Array<Actor>) => {
         this.actors = res
-      })
+      }))
     }
   }
 }
