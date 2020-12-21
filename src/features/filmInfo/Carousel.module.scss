@@ -1,0 +1,11 @@
+.Carousel {
+  overflow-x: auto;
+  width: 100%;
+  .Inner{
+    display: flex;
+    width: max-content;
+  }
+  .Image{
+    width: 200px;
+  }
+}
