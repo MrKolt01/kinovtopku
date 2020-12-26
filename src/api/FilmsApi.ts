@@ -45,7 +45,7 @@ type TVResponse = {
 export type Actor = {
   name: string
   character: string
-  cast_id: string
+  id: string
 }
 
 export const FilmsApi = {

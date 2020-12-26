@@ -14,7 +14,7 @@ const ActorsCloud = observer(() => {
             className={styles.Chip}
             variant={'outlined'}
             label={`${actor.name} (${actor.character}) `}
-            key={actor.cast_id}
+            key={actor.id}
           />
         )
       })}
