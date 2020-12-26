@@ -1,7 +1,8 @@
 import React from 'react'
 import { Redirect, Route, Switch } from 'react-router-dom'
-import TopFilmsPage from '../topFilms/TopFilmsPage'
-import FilmInfoPage from '../filmInfo/FilmInfoPage'
+
+import FilmInfoPage from '../filmInfo/containers/FilmInfoPage'
+import TopFilmsPage from '../topFilms/containers/TopFilmsPage'
 
 const PageSwitcher = () => {
   return (

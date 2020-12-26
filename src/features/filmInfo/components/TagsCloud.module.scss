@@ -1,7 +1,8 @@
-.Container{
+.TagsCloud{
   display: flex;
   flex-wrap: wrap;
-  .Chip{
+
+  .Tag{
     margin: 4px;
   }
 }
